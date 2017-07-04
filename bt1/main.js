@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Tick} from './components/welcome';
-
-//update seconds of Clock
-var user = {
-	name: ['Time', '321']
+import {Home} from './components/welcome';
+import {Header} from './components/header';
+//Practice handle Event , State , and Props
+class App extends React.Component {
+	render() {
+		return (
+			<Header />
+		)
+	}
 }
-ReactDOM.render(
-	<Tick user={user}/>,
-	document.getElementById('app')
-);
+
+ReactDOM.render(<App/>, window.document.getElementById('app'));

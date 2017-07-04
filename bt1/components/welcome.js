@@ -1,12 +1,24 @@
 import React from 'react';
 
-export class Tick extends React.Component {
+export class Home extends React.Component {
+	constructor(props) {
+		super();
+		this.state = {
+			quantity: props.initialNumb
+		}
+	}
+
+	onUpdateName() {
+		this.setState({
+			quantity: this.state.quantity + 5
+		})
+	}
 	render() {
-		console.log(this.props.user)
 		return (
-			<ul>
-				{this.props.user.name.map((names)=> <li>{names}</li>)}
-			</ul>
+			<div>
+				<h3>{this.props.name} got <span>{this.state.quantity}$</span></h3>
+				<button onClick={this.onUpdateName.bind(this)}>Add 5$</button>
+			</div>
 		)
 	}
 }
