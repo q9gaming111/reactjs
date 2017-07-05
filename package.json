@@ -4,7 +4,9 @@
   "description": "example reactjs",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --hot"
+    "bt1": "webpack-dev-server --content-base bt1/ --inline --hot",
+    "bt2": "webpack-dev-server --content-base bt2/ --inline --hot --history-api-fallback",
+    "bt3": "webpack-dev-server --content-base bt3/ --inline --hot --history-api-fallback"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,8 @@
   },
   "dependencies": {
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-router": "^3.0.2",
+    "redux": "^3.7.1"
   }
 }
