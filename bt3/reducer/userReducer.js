@@ -1,18 +1,11 @@
-var initialState = {
-	name: 'Tu Nguyen',
-	age: 18,
-	array: []
-};
-
-var userReducer = function( state = initialState ,action){
+var userReducer = function( state = {fecthed: false, data: []} ,action){
 	switch (action.type) {
-		case "SETNAME":
-			state = Object.assign({}, state);
-			state.name = action.payload;
-			break;
-		case "SETAGE":
-			state = Object.assign({}, state);
-			state.age = action.age;
+		case "GET_USER":
+			return {
+				...state,
+				fecthed: true,
+				data: action.data
+			}
 			break;
 	}
 	return state;

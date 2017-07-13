@@ -1,12 +1,14 @@
-export function setName(name) {
+export const FETCH_STARTED = 'FETCH_STARTED';
+export function getUserStarted(name) {
 	return {
-		type: 'SETNAME',
-		payload: name
+		type: FETCH_STARTED
 	}
 }
-export function setAge(age) {
-	return {
-		type: 'SETAGE',
-		age: age
-	}
-}
+
+
+export const FETCH_COMPLETED = 'FETCH_COMPLETED';
+export function getUserCompleted() {
+  return {
+    type: FETCH_COMPLETED
+  }
+};

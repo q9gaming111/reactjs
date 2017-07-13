@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": "2",
+      "title": "dsada2222",
+      "author": "dsadsa22222",
+      "img": "img"
+    },
+    {
+      "id": "dsa",
+      "title": "dsada2222",
+      "author": "dsadsa22222",
+      "img": "img"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

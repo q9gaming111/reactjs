@@ -1,41 +1,44 @@
 import React from 'react';
 import {browserHistory} from 'react-router';
 import {connect} from 'react-redux';
-import {setName, setAge} from '../actions/userAction';
-export var  User = function(props) {
+import * as actions from '../actions/mathAction';
+import * as fecth from '../actions/getTotalUser';
+import store from '../store';
 
-	 function backToHome() {
-		browserHistory.push('/');
+class User extends React.Component {
+	componentWillMount() {
+		//initial call request
+		this.props.initRequestUserDetail();
 	}
-	return (
-		<div className="user-page">
-			<h1>User Name: {props.user.name}</h1>
-			<h1>Age: {props.user.age}</h1>
-			<hr/>
-			<button onClick={() => props.setName('Thao')}>Change new Name</button>
-			<hr/>
-			<button onClick={() => props.setAge('44')}>Change new Name</button>
-			<hr/>
-			<button onClick={() => backToHome()}>Back to Home</button>
-		</div>
-	)
+	render() {
+		var fecthed = this.props.user.fecthed;
+		actions.addLoading(fecthed);
+		return (
+			<div className="user-page">
+				{ this.props.user.fecthed &&
+					<div>
+						<h1>User Name : {this.props.user.data.username}</h1>
+						<h3>User Id : {this.props.user.data.id}</h3>
+					</div>
+				}
+			</div>
+		)
+	}
 }
 
 const mapStateToProps = (state) => {
 	return {
-		user: state.user,
-		math: state.math
+		user: state.user
 	}
 }
-const mapDispatchToProps = (dispatch) => {
+
+const mapDispacthToProps = (dispatch) => {
 	return {
-		setName: (name) => {
-			dispatch(setName(name));
-		},
-		setAge: (age) => {
-			dispatch(setAge(age));
+		initRequestUserDetail: () => {
+			dispatch(fecth.fectUserDetail(window.location.pathname))
 		}
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(User);
+// store.dispatch(fecth.fectUserDetail(window.location.pathname))
+export default connect(mapStateToProps,mapDispacthToProps)(User);

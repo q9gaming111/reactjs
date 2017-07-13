@@ -5,7 +5,8 @@ module.exports = {
 	entry: {
 		exp1: './bt1/main.js',
 		exp2: './bt2/main.js',
-		exp3: './bt3/main.js'
+		exp3: './bt3/main.js',
+		exp4: './bt4/main.js'
 	},
 	output: {
 		path: path.resolve(__dirname, 'output'),
@@ -19,7 +20,7 @@ module.exports = {
 				loader: 'babel-loader', 
 				exclude: /node_modules/, 
 				query: {
-					presets: ['es2015', 'react']
+					presets: ['es2015', 'react', 'stage-2']
 				}
 			}
 		]
