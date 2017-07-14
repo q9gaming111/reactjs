@@ -260,36 +260,3 @@ sup {
   margin: 0px auto;
   padding-top: 15px;
 }
-.header a {
-  font-size: 20px;
-  display: block;
-  padding: 15px 0px;
-  padding-left: 20px;
-  background-color: rgba(137,137,137,0.1);
-  border: 1px solid #aaa;
-  border-radius: 10px;
-}
-.container p {
-  margin-top: 10px;
-  margin-bottom: 0px;
-  font-size: 14px;
-  font-weight: bold;
-
-}
-.container {
-  margin-top: 20px;
-}
-.container button {
-  background-color: #3d3dc1;
-  padding: 10px 20px;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 5px;
-}
-.container input {
-  height: 35px;
-  border: 1px solid #aaa;
-  margin-right: 30px;
-  padding-left: 10px;
-}

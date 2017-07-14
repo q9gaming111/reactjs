@@ -17,7 +17,7 @@ class User extends React.Component {
 			<div className="user-page">
 				{ this.props.user.fecthed &&
 					<div>
-						<h1>User Name : {this.props.user.data.username}</h1>
+						<h1>User Name : {this.props.user.data.name}</h1>
 						<h3>User Id : {this.props.user.data.id}</h3>
 					</div>
 				}

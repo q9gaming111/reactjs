@@ -1,38 +1,31 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import $ from 'jquery';
-import ListItem from './list-items';
-import * as actions from '../actions/mathAction';
-import * as fecth from '../actions/getTotalUser';
-import store from '../store';
+import Introduce from './introduce';
+import Skills from './skills';
+import * as fetch from '../actions/fetchIntro';
 
 class Home extends React.Component{
 	componentWillMount() {
-		this.props.initRequestUsers();
+		this.props.initIntroUser();
 	}
 	render() {
-		//initial call request
-		//this.props.initRequestUsers();
-
-		actions.addLoading(this.props.posts.fetched);
 		return (
-			<div className="home-page">
-				<ListItem posts={this.props.posts} />
-				<div className="pagination">
-				</div>
+			<div id="home">
+				<Introduce contact={this.props.introUser}/>
 			</div>
 		)
 	}
 }
+
 const mapStateToProps = (state) => {
 	return {
-		posts: state.math
+		introUser: state.introReducer
 	}
 }
 const mapDispacthToProps = (dispatch) => {
 	return {
-		initRequestUsers: () => {
-			dispatch(fecth.fectUsers())
+		initIntroUser: () => {
+			dispatch(fetch.fectUsers())
 		}
 	}
 }

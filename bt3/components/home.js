@@ -13,7 +13,7 @@ class Home extends React.Component{
 	render() {
 		//initial call request
 		//this.props.initRequestUsers();
-
+		
 		actions.addLoading(this.props.posts.fetched);
 		return (
 			<div className="home-page">

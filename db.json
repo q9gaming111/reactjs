@@ -1,31 +1,16 @@
 {
-  "posts": [
+  "contact": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "name": "location",
+      "value": "52/9 265 Street Q.9 TPHCM" 
     },
     {
-      "id": "2",
-      "title": "dsada2222",
-      "author": "dsadsa22222",
-      "img": "img"
+      "name": "phone",
+      "value": "0169 685 3747"
     },
     {
-      "id": "dsa",
-      "title": "dsada2222",
-      "author": "dsadsa22222",
-      "img": "img"
+      "name": "email",
+      "value": "nguyenthanhtu11cqt12@gmail.com"
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

@@ -7,20 +7,20 @@ export var fectUsers = function(page) {
 	let urlAPI = 'https://jsonplaceholder.typicode.com/users';
 	return (dispatch) => {
 		dispatch(actions.fetchStarted());
-		axios.get(urlAPI)
+		return axios.get(urlAPI)
  		.then(function(data){
  			var returnData = Object.assign(actions.fetchCompleted(),data: data.data)
- 			return dispatch(returnData)
+ 			dispatch(returnData)
  		})
 	}
 };
 export var fectUserDetail = function(pathName) {
 	let urlAPI = 'https://jsonplaceholder.typicode.com' + pathName;
 	return (dispatch) => {
-		axios.get(urlAPI)
+		return  axios.get(urlAPI)
  		.then(function(data){
  			var returnData = Object.assign(actions.getUserCompleted(),data: data.data)
- 			return dispatch(returnData)
+ 			dispatch(returnData)
  		})
 	}
 }
