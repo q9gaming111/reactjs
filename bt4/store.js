@@ -1,10 +1,10 @@
 import {createStore, combineReducers,applyMiddleware,compose} from 'redux';
 import thunk from 'redux-thunk';
-import introReducer from './reducer/introReducer';
+import Movies from './reducer/introReducer';
 
 var store = createStore (
 	combineReducers({
-		introReducer
+		Movies
 }),applyMiddleware(thunk));
 
 export default store;

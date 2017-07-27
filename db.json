@@ -12,5 +12,9 @@
       "name": "email",
       "value": "nguyenthanhtu11cqt12@gmail.com"
     }
-  ]
+  ],
+  "infomation": {
+    "name": "Tu Nguyen",
+    "jobTitle": "Front-End Developer"
+  }
 }

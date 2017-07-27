@@ -4,7 +4,7 @@ import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import {Provider} from 'react-redux';
 import Root from './components/root';
 import Home from './components/home';
-import Gallary from './components/gallary';
+import Movie from './components/movie';
 import store from './store';
 
 class App extends React.Component {
@@ -13,12 +13,13 @@ class App extends React.Component {
 			<Router history={browserHistory}>
 				<Route path={"/"} component={Root} >
 					<IndexRoute component={Home}/>
-					<Route path={"gallary"} component={Gallary} />
+					<Route path={"movie/:id"} component={Movie} />
 				</Route>
 			</Router>
 		)
 	}
 }
+
 render(
 	<Provider store={store}>
 		<App/>

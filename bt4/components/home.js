@@ -1,17 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Introduce from './introduce';
-import Skills from './skills';
-import * as fetch from '../actions/fetchIntro';
+import * as fetch from '../actions/getListMovies';
 
 class Home extends React.Component{
-	componentWillMount() {
+	componentDidMount() {
 		this.props.initIntroUser();
 	}
 	render() {
 		return (
 			<div id="home">
-				<Introduce contact={this.props.introUser}/>
+				<Introduce movies={this.props.moviesList} loadMore={this.props.initIntroUser} />
 			</div>
 		)
 	}
@@ -19,13 +18,13 @@ class Home extends React.Component{
 
 const mapStateToProps = (state) => {
 	return {
-		introUser: state.introReducer
+		moviesList: state.Movies
 	}
 }
 const mapDispacthToProps = (dispatch) => {
 	return {
-		initIntroUser: () => {
-			dispatch(fetch.fectUsers())
+		initIntroUser: (page) => {
+			dispatch(fetch.getMovies(page))
 		}
 	}
 }
