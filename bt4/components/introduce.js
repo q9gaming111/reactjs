@@ -15,6 +15,7 @@ class Introduce extends React.Component {
 	onScroll() {
 		var isLoading = true;
 		var isFetched = this.props.movies.fetched;
+		var props = this.props;
 		$(window).on('scroll', function(){
 			var scrollTop = $(this).scrollTop();
 			var documentHeight = document.getElementById('app').offsetHeight;
@@ -22,13 +23,10 @@ class Introduce extends React.Component {
 			if( scrollTop + windowH + 50 > documentHeight && isLoading ) {
 				if( isFetched ) {
 					isLoading = false;
-					handleLoadMore();
+					props.loadMore(props.movies.totalPage +=1)
 				}
 			}
 		});
-	}
-	handleLoadMore() {
-		this.props.movies.loadMore(this.props.movies.totalPage +=1)
 	}
 	handleImageLoaded(e) {
 		e.target.parentElement.children.item('span').className = 'hidden';
