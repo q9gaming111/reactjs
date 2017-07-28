@@ -4,7 +4,7 @@
   "description": "example reactjs",
   "main": "index.js",
   "scripts": {
-    "start": "webpack -p",
+    "start": "npm run bt4",
     "bt1": "webpack-dev-server --content-base bt1/ --inline --hot",
     "bt2": "webpack-dev-server --content-base bt2/ --inline --hot --history-api-fallback",
     "bt3": "json-server --watch db.json --port 3004 | webpack-dev-server --content-base bt3/ --inline --hot --history-api-fallback",
