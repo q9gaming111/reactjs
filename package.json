@@ -4,9 +4,12 @@
   "description": "example reactjs",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm run start",
-    "start": "node ./bt4/main.js",
-    "bt4": "webpack-dev-server --content-base bt4/ --inline --hot --history-api-fallback"
+    "bt1": "webpack-dev-server --content-base bt1/ --inline --hot",
+    "bt2": "webpack-dev-server --content-base bt2/ --inline --hot --history-api-fallback",
+    "bt3": "json-server --watch db.json --port 3004 | webpack-dev-server --content-base bt3/ --inline --hot --history-api-fallback",
+    "bt4": "webpack-dev-server --content-base bt4/ --inline --hot --history-api-fallback",
+    "postinstall": "webpack --config ./webpack.prod.config.js npm start",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +32,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "express": "^4.15.4",
     "jquery": "^3.2.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
