@@ -8,4 +8,4 @@ app.get('*', (req,res) => {
 	res.sendFile(path.resolve(__dirname + '/bt4', 'index.html'));
 })
 app.listen(port);
-console.log('Start123421');
+console.log(port);
