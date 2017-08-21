@@ -8,8 +8,8 @@
     "bt2": "webpack-dev-server --content-base bt2/ --inline --hot --history-api-fallback",
     "bt3": "json-server --watch db.json --port 3004 | webpack-dev-server --content-base bt3/ --inline --hot --history-api-fallback",
     "bt4": "webpack-dev-server --content-base bt4/ --inline --hot --history-api-fallback",
-    "build": "webpack --config ./webpack.prod.config.js",
-    "start": "node server.js"
+    "postinstall": "webpack --config ./webpack.prod.config.js",
+    "build": "node server.js"
   },
   "repository": {
     "type": "git",
